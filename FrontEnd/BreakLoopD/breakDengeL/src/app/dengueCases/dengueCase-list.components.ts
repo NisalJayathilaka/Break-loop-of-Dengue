@@ -1,16 +1,22 @@
 import { Component } from "@angular/core";
+import { ICases } from "./dCases";
 
 @Component({
     selector:"pm-dengueCases",
-    templateUrl:"./dengueCase-list.components.html"
+    templateUrl:"./dengueCase-list.components.html",
+    styleUrls:["./dengueCase-list.components.css"]
 })
 
 export class DenguelistComponent{
    dangueCases:string="Dengue Cases";
    imageWidh:number=50;
    imageMargin:number=2;
+   listFilter:string='dengu';
+
    showImage:boolean=false;
-   ceases:any[] =[ {
+
+   ceases:ICases[] =[ {
+
         "productId": 1,
         "productName": "Leaf Rake",
         "productCode": "GDN-0011",
@@ -21,6 +27,7 @@ export class DenguelistComponent{
         "imageUrl": "assets/images/dengue1.jpeg"
   },
   {
+
     "productId": 2,
     "productName": "Garden Cart",
     "productCode": "GDN-0023",
