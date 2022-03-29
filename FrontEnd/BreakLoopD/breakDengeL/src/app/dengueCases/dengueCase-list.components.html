@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        Dengue cases
+        {{dangueCases}}
     </div>
     <div class="card-body">
         <div class="row">
@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" (click)='toggleImage()'>
                                 show Image
                             </button>
                         </th>
@@ -32,7 +32,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <tr *ngFor='let case of ceases'> 
+                        <td><img *ngIf='showImage'
+                            [src]='case.imageUrl'
+                            [title]='product.productName'
+                            [style.width.px]='imageWidh'
+                            [style.margin.px]='imageMargin'>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         
