@@ -43,7 +43,7 @@
                         <td>{{case.productCode|lowercase|convertToSpace:'-'}}</td>
                         <td>{{case.releaseDate}}</td>
                         <td>{{case.price}}</td>
-                        <td>{{case.starRating}}</td>
+                        <td><pm-star [rating]='case.starRating'></pm-star></td>
                     </tr>
                 </tbody>
             </table>

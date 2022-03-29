@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { DenguelistComponent } from './dengueCases/dengueCase-list.components';
 import { FormsModule } from '@angular/forms';
 import { ConvertToPipe } from './shared/convert-to-spaces.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DenguelistComponent,
-    ConvertToPipe
+    ConvertToPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
