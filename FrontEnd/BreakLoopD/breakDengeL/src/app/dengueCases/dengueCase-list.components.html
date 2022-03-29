@@ -32,13 +32,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let case of ceases'> 
+                    <tr *ngFor='let case of filterCases'> 
                         <td><img *ngIf='showImage'
                             [src]='case.imageUrl'
                             [title]='product.productName'
                             [style.width.px]='imageWidh'
                             [style.margin.px]='imageMargin'>
                         </td>
+                        <td>{{case.productName}}</td>
+                        <td>{{case.productCode|lowercase|convertToSpace:'-'}}</td>
+                        <td>{{case.releaseDate}}</td>
+                        <td>{{case.price}}</td>
+                        <td>{{case.starRating}}</td>
                     </tr>
                 </tbody>
             </table>

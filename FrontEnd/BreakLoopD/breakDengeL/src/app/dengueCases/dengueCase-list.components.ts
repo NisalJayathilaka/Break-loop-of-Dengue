@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ICases } from "./dCases";
 
 @Component({
@@ -7,13 +7,26 @@ import { ICases } from "./dCases";
     styleUrls:["./dengueCase-list.components.css"]
 })
 
-export class DenguelistComponent{
+export class DenguelistComponent implements OnInit{
    dangueCases:string="Dengue Cases";
    imageWidh:number=50;
    imageMargin:number=2;
-   listFilter:string='dengu';
-
    showImage:boolean=false;
+
+   private _listFilter:string=' ';
+
+   get listFilter():string{
+       return this._listFilter;
+   }
+
+   set listFilter(value:string)
+   {
+      this._listFilter=value;
+      console.log('in setter', value);
+      this.filterCases = this.performeFilter(value);
+   }
+
+   filterCases:ICases[]=[];
 
    ceases:ICases[] =[ {
 
@@ -38,8 +51,16 @@ export class DenguelistComponent{
     "imageUrl": "assets/images/garden_cart.png"
   }
 ];
-
+performeFilter(filterBy:string):ICases[]
+{
+  filterBy = filterBy.toLocaleLowerCase();
+  return this.ceases.filter((cases:ICases)=>
+  cases.productName.toLocaleLowerCase().includes(filterBy));
+}
 toggleImage():void{
     this.showImage= !this.showImage;
+}
+ngOnInit(): void {
+    this._listFilter='deng'
 }
 }
