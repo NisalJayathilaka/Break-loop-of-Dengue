@@ -35,7 +35,7 @@
                     <tr *ngFor='let case of filterCases'> 
                         <td><img *ngIf='showImage'
                             [src]='case.imageUrl'
-                            [title]='product.productName'
+                            [title]='case.productName'
                             [style.width.px]='imageWidh'
                             [style.margin.px]='imageMargin'>
                         </td>
@@ -43,7 +43,10 @@
                         <td>{{case.productCode|lowercase|convertToSpace:'-'}}</td>
                         <td>{{case.releaseDate}}</td>
                         <td>{{case.price}}</td>
-                        <td><pm-star [rating]='case.starRating'></pm-star></td>
+                        <td><pm-star [rating]='case.starRating'
+                            (ratingClcikEvent)='onRatingClicked($event)'>
+
+                        </pm-star></td>
                     </tr>
                 </tbody>
             </table>

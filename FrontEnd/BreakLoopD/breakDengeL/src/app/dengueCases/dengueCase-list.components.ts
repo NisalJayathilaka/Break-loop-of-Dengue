@@ -63,4 +63,7 @@ toggleImage():void{
 ngOnInit(): void {
     this._listFilter='deng'
 }
+onRatingClicked(message:string):void{
+  this.dangueCases = ''+ message;
+}
 }
