@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ICases } from "./dCases";
+import { DengueService } from "./dCases.service";
 
 @Component({
     selector:"pm-dengueCases",
@@ -12,6 +13,7 @@ export class DenguelistComponent implements OnInit{
    imageWidh:number=50;
    imageMargin:number=2;
    showImage:boolean=false;
+   errorMessage:string='';
 
    private _listFilter:string=' ';
 
@@ -28,41 +30,33 @@ export class DenguelistComponent implements OnInit{
 
    filterCases:ICases[]=[];
 
-   ceases:ICases[] =[ {
+   ceases:ICases[] =[];
 
-        "productId": 1,
-        "productName": "Leaf Rake",
-        "productCode": "GDN-0011",
-        "releaseDate": "March 19, 2021",
-        "description": "Leaf rake with 48-inch wooden handle.",
-        "price": 19.95,
-        "starRating": 3.2,
-        "imageUrl": "assets/images/dengue1.jpeg"
-  },
-  {
+   constructor(private dngueService:DengueService){}
 
-    "productId": 2,
-    "productName": "Garden Cart",
-    "productCode": "GDN-0023",
-    "releaseDate": "March 18, 2021",
-    "description": "15 gallon capacity rolling garden cart",
-    "price": 32.99,
-    "starRating": 4.2,
-    "imageUrl": "assets/images/garden_cart.png"
-  }
-];
-performeFilter(filterBy:string):ICases[]
-{
+   performeFilter(filterBy:string):ICases[]
+ {
   filterBy = filterBy.toLocaleLowerCase();
   return this.ceases.filter((cases:ICases)=>
   cases.productName.toLocaleLowerCase().includes(filterBy));
-}
+ }
 toggleImage():void{
     this.showImage= !this.showImage;
 }
+
 ngOnInit(): void {
-    this._listFilter='deng'
+       
+  this.dngueService.getCases().subscribe({
+      next: products=>{
+          
+          this.ceases=products;
+          this.filterCases = this.ceases;
+      },
+
+      error:err => this.errorMessage =err
+  });
 }
+
 onRatingClicked(message:string):void{
   this.dangueCases = ''+ message;
 }
