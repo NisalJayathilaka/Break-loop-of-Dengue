@@ -11,6 +11,7 @@ import { DengueCasesDetailsComponent } from './dengueCases/dengue-cases-details.
 
 import { RouterModule } from '@angular/router';
 import { WelcomeComponent } from './home/welcome.component';
+import { DengueCasesDetailsGuard } from './dengueCases/dengue-cases-details.guard';
 
 
 @NgModule({
@@ -29,7 +30,11 @@ import { WelcomeComponent } from './home/welcome.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path:'cases', component:DenguelistComponent },
-      { path:'cases/:id', component:DengueCasesDetailsComponent },
+      { 
+        path:'cases/:id', 
+        canActivate:[DengueCasesDetailsGuard],
+      component:DengueCasesDetailsComponent 
+      },
        { path: 'welcome',component:WelcomeComponent},
       { path: '', redirectTo:'welcome',pathMatch:'full'},
       {path:'**',redirectTo:'welcome',pathMatch:'full'}
