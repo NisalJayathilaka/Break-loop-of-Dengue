@@ -27,7 +27,6 @@
                         <th>Caess</th>
                         <th>Location</th>
                         <th>Available</th>
-                        <th>Price</th>
                         <th>Rating</th>
                     </tr>
                 </thead>
@@ -46,7 +45,6 @@
                         </td>
                         <td>{{case.productCode|lowercase|convertToSpace:'-'}}</td>
                         <td>{{case.releaseDate}}</td>
-                        <td>{{case.price}}</td>
                         <td><pm-star [rating]='case.starRating'
                             (ratingClcikEvent)='onRatingClicked($event)'>
 

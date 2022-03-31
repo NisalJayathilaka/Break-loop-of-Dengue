@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
-import {catchError,tap} from 'rxjs/operators';
+import {catchError,map,tap} from 'rxjs/operators';
 import { ICases } from "./dCases";
 
 
@@ -21,7 +21,15 @@ export class DengueService{
         catchError(this.handleError)
 
         );
-}
+    }
+
+    getCase(id: number): Observable<ICases | undefined> {
+        return this.getCases()
+          .pipe(
+            map((products: ICases[]) => products.find(p => p.productId === id))
+          );
+      }
+
     private handleError(err: HttpErrorResponse) {
     let errMessage = '';
     if(err.error instanceof ErrorEvent)

@@ -1,6 +1,6 @@
 export interface ICases{
 
-           productId: number;
+            productId: number;
             productName: string;
             productCode: string;
             releaseDate: string;
@@ -9,3 +9,4 @@ export interface ICases{
             starRating: number;
             imageUrl: string;
 }
+
