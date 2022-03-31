@@ -39,7 +39,11 @@
                             [style.width.px]='imageWidh'
                             [style.margin.px]='imageMargin'>
                         </td>
-                        <td>{{case.productName}}</td>
+                        <td>
+                            <a [routerLink]="['/cases',case.productId]" > 
+                            {{case.productName}}
+                            </a>
+                        </td>
                         <td>{{case.productCode|lowercase|convertToSpace:'-'}}</td>
                         <td>{{case.releaseDate}}</td>
                         <td>{{case.price}}</td>

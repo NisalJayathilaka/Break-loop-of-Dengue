@@ -4,10 +4,16 @@ import { Component } from '@angular/core';
   selector: 'pm-root',
 
   template: `
+  <nav class='navbar navbar-expand navbar-light bg-light'>
+  <a class = 'navbar-brand'> {{title}}</a>
+  <ul class='nav nav-pills'>
+  <li> <a class ='nav-link' routerLink='/welcome'>Home</a></li>
+  <li> <a class ='nav-link' routerLink='/cases'>Case List</a></li>
+  </ul>
+  </nav>
+  <div class='container'>
+  <router-outlet></router-outlet>
   <div>
-  <h1>{{title}}</h1>
-  <pm-dengueCases></pm-dengueCases>
-  </div>
   `
 })
 export class AppComponent {

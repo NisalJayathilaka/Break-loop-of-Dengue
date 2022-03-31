@@ -7,6 +7,10 @@ import { DenguelistComponent } from './dengueCases/dengueCase-list.components';
 import { FormsModule } from '@angular/forms';
 import { ConvertToPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
+import { DengueCasesDetailsComponent } from './dengueCases/dengue-cases-details.component';
+
+import { RouterModule } from '@angular/router';
+import { WelcomeComponent } from './home/welcome.component';
 
 
 @NgModule({
@@ -14,12 +18,22 @@ import { StarComponent } from './shared/star.component';
     AppComponent,
     DenguelistComponent,
     ConvertToPipe,
-    StarComponent
+    StarComponent,
+    DengueCasesDetailsComponent,
+    WelcomeComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path:'cases', component:DenguelistComponent },
+      { path:'cases/:id', component:DengueCasesDetailsComponent },
+       { path: 'welcome',component:WelcomeComponent},
+      { path: '', redirectTo:'welcome',pathMatch:'full'},
+      {path:'**',redirectTo:'welcome',pathMatch:'full'}
+    ])
   ],
   bootstrap: [AppComponent]
 })
