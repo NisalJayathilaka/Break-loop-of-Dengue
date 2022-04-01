@@ -1,50 +1,47 @@
 [
   {
     "productId": 1,
-    "productName": "Leaf Rake",
-    "productCode": "GDN-0011",
-    "releaseDate": "March 19, 2021",
-    "description": "Leaf rake with 48-inch wooden handle.",
+    "productName": "Dengues in Tires",
+    "productCode": "Bandaragama",
+    "releaseDate": "March 25, 2022",
+    "description": "In side the tire there are somay mosquitoes.",
     "starRating": 3.2,
-    "imageUrl": "assets/images/dengue1.jpeg"
+    "imageUrl": "assets/images/dengue2.jpeg"
   },
   {
     "productId": 2,
-    "productName": "Garden Cart",
-    "productCode": "GDN-0023",
-    "releaseDate": "March 18, 2021",
-    "description": "15 gallon capacity rolling garden cart",
-    
+    "productName": "Garden",
+    "productCode": "Panadura",
+    "releaseDate": "March 25, 2022",
+    "description": "15 gallon capacity water barrel in the garden",
     "starRating": 4.2,
-    "imageUrl": "assets/images/dengue1.jpeg"
+    "imageUrl": "assets/images/dengue3.jpeg"
   },
   {
     "productId": 5,
-    "productName": "Hammer",
-    "productCode": "TBX-0048",
-    "releaseDate": "May 21, 2021",
-    "description": "Curved claw steel hammer",
-   
+    "productName": "On the Road",
+    "productCode": "Kaluthara",
+    "releaseDate": "March 25, 2022",
+    "description": "There are water collecting things on the road",
     "starRating": 4.8,
-    "imageUrl": "assets/images/dengue1.jpeg"
+    "imageUrl": "assets/images/dengue4.jpeg"
   },
   {
     "productId": 8,
-    "productName": "Saw",
-    "productCode": "TBX-0022",
-    "releaseDate": "May 15, 2021",
-    "description": "15-inch steel blade hand saw",
-   
+    "productName": "Garden",
+    "productCode": "Bandaragama",
+    "releaseDate": "March 25, 2022",
+    "description": "There are water collecting things in the Garden",
     "starRating": 3.7,
-    "imageUrl": "assets/images/dengue1.jpeg"
+    "imageUrl": "assets/images/dengue5.jpeg"
   },
   {
     "productId": 10,
-    "productName": "Video Game Controller",
-    "productCode": "GMG-0042",
-    "releaseDate": "October 15, 2020",
-    "description": "Standard two-button video game controller",
+    "productName": "Road",
+    "productCode": "Panadura",
+    "releaseDate": "March 25, 2022",
+    "description": "Water is stuck in the drain",
     "starRating": 4.6,
-    "imageUrl": "assets/images/dengue1.jpeg"
+    "imageUrl": "assets/images/dengue7.jpeg"
   }
 ]
